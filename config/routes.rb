@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'yachts#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :users, except: [:destroy] do
-    resources :bookings, except: [:destroy]
-    resources :yachts, except: [:destroy]
+  resources :users, only: :show
+  resources :yachts, except: :index do
+    resources :bookings, only: [:new, :create]
   end
-  resources :users, only: :destroy
-  resources :bookings, only: :destroy
-  resources :yachts, only: :destroy
+  resources :bookings, except: [:new, :create, :index]
 end
