@@ -1,6 +1,6 @@
 <nav>
   <a href="#" class="nav-icon" aria-label="visit homepage" aria-current="page" data-controller="navbar" data-action="#">
-    <%= image_tag "boat.png" %>
+    <%= link_to image_tag ("boat.png"), :controller => 'top_yachts', :class => 'dock-item'%>
     <span>Yachtbnb</span>
   </a>
 
@@ -11,9 +11,9 @@
       <span></span>
     </button>
     <div class="navlinks-container">
-      <a href="#" aria-current="page">Home</a>
+      <%= link_to 'Home', top_yachts_path %>
       <a href="#">Your profile</a>
-      <a href="#">Your yachts</a>
+      <%= link_to 'Your yachts', yachts_path %>
     </div>
   </div>
 

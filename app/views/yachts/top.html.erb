@@ -2,25 +2,41 @@
   <h1>
     <span>Stop dreaming your life</span>
     <span>live your dreams</span>
+    <br>
+    <%= link_to "See all the yachts", yachts_path, class: "btn-index" %>
+
+    <h3>Search by rate</h3>
+    <div class="search-form">
+      <%= form_tag(yachts_path, method: :get) do %>
+      <%= text_field_tag(:search_by_rate, params[:search_by_rate]) %>
+      <button name="button" type="submit">
+      <%= submit_tag ("Search") %>
+      </button>
+      <% end %>
+      <%= button_to "Clear this search", yachts_path, method: :get, class: "btn" %>
+    </div>
+
   </h1>
   <div class="card-container">
-    <div class="card-wrapper">
     <% @yachts.each do |yacht| %>
-      <div class="card">
-        <div class="card-front">
-          <p><%= yacht.name %></p>
-          <%= image_tag "yacht.jpg", class: "yacht-img"%>
-          <div class="card-price">
-            <span><%= yacht.price%>€ / day</span>
+      <div class="card-wrapper">
+        <div class="card">
+          <div class="card-front">
+            <p><%= yacht.name %></p>
+            <%= image_tag "yacht.jpg", class: "yacht-img"%>
+            <div class="card-price">
+              <span><%= yacht.price%>€ / day</span>
+              <br>
+              <p><%= yacht.stars%> stars</p>
+            </div>
+            <i class="arrow-icon fas fa-arrow-right"></i>
           </div>
-          <i class="arrow-icon fas fa-arrow-right"></i>
-        </div>
-        <!--link to yacht show-->
-        <div class="card-back">
-          <a href="#" class="btn">Rent this yacht</a>
+          <!--link to yacht show-->
+          <div class="card-back">
+            <%= link_to 'Rent this yacht', yacht_path(yacht), class: "btn" %>
+          </div>
         </div>
       </div>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 </div>

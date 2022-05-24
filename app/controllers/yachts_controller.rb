@@ -9,7 +9,7 @@ class YachtsController < ApplicationController
   end
 
   def index
-    @yachts = Yacht.all
+    @yachts = Yacht.search_by_rate(params[:search_by_rate])
   end
 
   def edit
@@ -21,8 +21,8 @@ class YachtsController < ApplicationController
 
   def create
     @yacht = Yacht.new(yacht_params)
-    @yacht.user = current_user
-    @yacht.save!
+    # @yacht.user = current_user
+    # @yacht.save!
   end
 
   def updated
@@ -35,6 +35,6 @@ class YachtsController < ApplicationController
   end
 
   def yacht_params
-    params.require(:yacht).permit(:name, :address, :price)
+    params.require(:yacht).permit(:name, :address, :price, :stars, :search_by_rate)
   end
 end
