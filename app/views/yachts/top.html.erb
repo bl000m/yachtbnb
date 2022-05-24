@@ -3,13 +3,18 @@
     <span>Stop dreaming your life</span>
     <span>live your dreams</span>
     <br>
-    <%= link_to "See all the yachts", yachts_path %>
+    <%= link_to "See all the yachts", yachts_path, class: "btn-index" %>
+
     <h3>Search by rate</h3>
-    <%= form_tag(yachts_path, method: :get) do %>
-    <%= text_field_tag(:search_by_rate, params[:search_by_rate]) %>
-    <%= submit_tag ("Search") %>
-    <% end %>
-    <%= button_to "Clear this search", yachts_path, method: :get %>
+    <div class="search-form">
+      <%= form_tag(yachts_path, method: :get) do %>
+      <%= text_field_tag(:search_by_rate, params[:search_by_rate]) %>
+      <button name="button" type="submit">
+      <%= submit_tag ("Search") %>
+      </button>
+      <% end %>
+      <%= button_to "Clear this search", yachts_path, method: :get, class: "btn" %>
+    </div>
 
   </h1>
   <div class="card-container">
@@ -28,7 +33,7 @@
           </div>
           <!--link to yacht show-->
           <div class="card-back">
-            <a href="#" class="btn">Rent this yacht</a>
+            <%= link_to 'Rent this yacht', yacht_path(yacht), class: "btn" %>
           </div>
         </div>
       </div>

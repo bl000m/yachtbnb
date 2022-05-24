@@ -32,7 +32,13 @@ nav {
   font-weight: 400;
   color: #333;
 }
-.nav-icon img {
+
+.dock-item{
+  width: 40px;
+  height: auto
+}
+
+.nav-icon img{
   width: 40px;
   transform: rotate(-17deg) translateX(5px);
 }
