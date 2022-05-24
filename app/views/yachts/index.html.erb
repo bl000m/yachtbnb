@@ -1,0 +1,4 @@
+<h1>Stop dreaming your life. Live your dreams. </h1>
+<% @yachts.each do |yacht| %>
+<%= link_to yacht.name, yacht_path(yacht) %>
+<% end %>
