@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>
+    <span>Stop dreaming your life</span>
+    <span>live your dreams</span>
+  </h1>
+  <div class="card-container">
+    <div class="card-wrapper">
+    <% @yachts.each do |yacht| %>
+      <div class="card">
+        <div class="card-front">
+          <p><%= yacht.name %></p>
+          <%= image_tag "yacht.jpg", class: "yacht-img"%>
+          <div class="card-price">
+            <span><%= yacht.price%>€ / day</span>
+          </div>
+          <i class="arrow-icon fas fa-arrow-right"></i>
+        </div>
+        <!--link to yacht show-->
+        <div class="card-back">
+          <a href="#" class="btn">Rent this yacht</a>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
