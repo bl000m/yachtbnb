@@ -12,6 +12,7 @@ user = User.create!(email: "yacht@yacht.com", password: "yachtyacht", username: 
     address: Faker::Address.state,
     price: Faker::Number.between(from: 10_000, to: 50_000),
     description: Faker::Movie.quote,
-    user: user
+    user: user,
+    stars: Faker::Number.between(from: 3, to: 5)
   )
 end

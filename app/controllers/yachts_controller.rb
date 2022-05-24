@@ -4,6 +4,10 @@ class YachtsController < ApplicationController
   def show
   end
 
+  def top
+    @yachts = Yacht.order(stars: :desc).take(9)
+  end
+
   def index
     @yachts = Yacht.all
   end

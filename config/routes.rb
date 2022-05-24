@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'yachts#index'
+  root to: 'yachts#top', as: :top_yachts
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users, only: :show
-  resources :yachts, except: :index do
+  # get "yachts/top", to: "yachts#top", as: :top_restaurants
+  resources :yachts do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, except: [:new, :create, :index]
