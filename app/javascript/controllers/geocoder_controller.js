@@ -1,32 +1,25 @@
-import { Controller } from "stimulus"
-import mapboxgl from "mapbox-gl"
+import { Controller } from "@hotwired/stimulus"
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 
 export default class extends Controller {
-  static targets = ["coordinates", "address"]
+  static values = { apiKey: String }
+
+  static targets = ["address"]
 
   connect() {
-    console.log("The 'geocode' controller is now loaded!");
+    this.geocoder = new MapboxGeocoder({
+      accessToken: this.apiKeyValue,
+      types: "country,region,place,postcode,locality,neighborhood,address"
+    });
+    this.geocoder.addTo(this.element)
+    this.geocoder.on("result", event => this.#setInputValue(event))
+    this.geocoder.on("clear", () => this.#clearInputValue())
+  }
+  #setInputValue(event) {
+    this.addressTarget.value = event.result["place_name"]
   }
 
-  show(event) {
-    event.preventDefault();
-    const apiKey = `https://api.mapbox.com/geocoding/v5/mapbox.places/${this.addressTarget.value}.json?access_token=pk.eyJ1IjoibWF0aGlhcGFnYW5pIiwiYSI6ImNsMzJ2bjJnNzAyMmgzbHBqMzFoNDhmNXcifQ.u5YYTMSyhi7K7GIvPOLtjA`;
-    fetch(apiKey)
-      .then(response => response.json())
-      .then((data) => {
-        const longitude = data.features[0].center[0];
-        const latitude = data.features[0].center[1];
-        this.coordinatesTarget.innerText = `longitude: ${longitude} latitude: ${latitude}`;
-        mapboxgl.accessToken = "pk.eyJ1IjoibWF0aGlhcGFnYW5pIiwiYSI6ImNsMzJ2bjJnNzAyMmgzbHBqMzFoNDhmNXcifQ.u5YYTMSyhi7K7GIvPOLtjA";
-        const map = new mapboxgl.Map({
-          container: "map",
-          style: "mapbox://styles/mapbox/streets-v9",
-          center: [Number(longitude), Number(latitude)],
-          zoom: 12
-        });
-        new mapboxgl.Marker()
-          .setLngLat([Number(longitude), Number(latitude)])
-          .addTo(map);
-      });
+  #clearInputValue() {
+    this.addressTarget.value = ""
   }
 }
