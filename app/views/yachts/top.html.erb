@@ -5,23 +5,23 @@
   </h1>
 
   <div class="top-bar-container">
-    <div class="search-box">
-      <input type="text" class="where-search" placeholder="Where...">
+   <!-- <div class="search-box">
+      <input type="text class="where-search" name="" value= placeholder ="Where...">
       <input type="text" class="when-search" placeholder="When...">
       <input type="text" class="with-search" placeholder="With...">
       <button class="btn-search">
         <i class="fas fa-search"></i>
       </button>
-    </div>
-    <!--<div class="search-box">
-      <%= form_tag(yachts_path, method: :get) do %>
-      <%= text_field_tag(:search_by_rate, params[:search_by_rate]) %>
-      <button name="button" type="submit">
-      <%= submit_tag ("Search") %>
-      </button>
+    </div>-->
+
+    <%= form_tag(yachts_path, method: :get, class: "search-box") do %>
+      <%= text_field_tag(:address, nil, class: "where-search") %>
+      <%= text_field_tag(:voyager, nil, class: "with-search") %>
+      <%= text_field_tag(:date, nil, class: "when-search") %>
+      <%= button_to nil, method: :get, class: "btn", type: "submit" do %>
+        <i class="fas fa-search"></i>
       <% end %>
-      <%= button_to "Clear this search", yachts_path, method: :get, class: "btn" %>
-      </div>-->
+    <% end %>
   </div>
 
   <div class="card-container">
