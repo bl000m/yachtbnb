@@ -5,18 +5,6 @@
   </h1>
 
   <div class="top-bar-container">
-    <div class="list-btn">
-      <%= link_to "Sort by price", yachts_path, class: "btn-index" %>
-    </div>
-    <span class="separation">|</span>
-    <div class="list-btn">
-      <%= link_to "Sort by ranking", yachts_path, class: "btn-index" %>
-    </div>
-    <span class="separation">|</span>
-    <div class="list-btn">
-      <%= link_to "See all the yachts", yachts_path, class: "btn-index" %>
-    </div>
-    <span class="separation">|</span>
     <div class="search-box">
       <button class="btn-search">
         <i class="fas fa-search"></i>
@@ -46,7 +34,7 @@
 
             </div>
             <div class="ranking-info">
-              <span><!--<%= yacht.stars%>--><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              <span><!--<%= yacht.stars%>-->4,5/5</span>
             </div>
             <i class="arrow-icon fas fa-arrow-right"></i>
           </div>
@@ -59,4 +47,3 @@
     <% end %>
   </div>
 </div>
-
