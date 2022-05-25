@@ -89,5 +89,11 @@
             <p class="description"><%= @yacht.description%></p>
             <p><%= @yacht.stars%> stars</p>
         </div>
+        <div>
+        <%= render 'shared/booking_form' %>
+        </div>
   </div>
-</div>-->
+
+<div id="booking-form-div"
+     data-bookings="<%= @bookings_dates.to_json %>">
+</div>
