@@ -11,6 +11,7 @@ nav {
   top: 0;
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 15px 25px;
   background: #fafafa;
@@ -25,17 +26,27 @@ nav {
   margin-right: 20px;
 }
 
+.nav-logo {
+  margin: 0 10px;
+}
+
 .nav-icon span {
   font-family: Roboto Flex, sans-serif;
   font-size: 25px;
-  margin-left: 10px;
-  font-weight: 400;
-  color: #333;
+  font-weight: bold;
+  color: #1a2f42;
 }
-.nav-icon img {
+
+.dock-item{
+  width: 50px;
+  height: auto;
+}
+
+.nav-icon img{
   width: 40px;
   transform: rotate(-17deg) translateX(5px);
 }
+
 .hamburger {
   display: none;
 }
@@ -44,7 +55,7 @@ nav {
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
-  color: #414141;
+  color: #1a2f42;
   display: inline-block;
   position: relative;
 }
@@ -70,26 +81,50 @@ nav {
 }
 
 .sign-btns {
-
-  font-size: 16px;
   min-width: 90px;
-  padding: 10px 5px;
-  margin: 0 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  border: none;
-  border: none;
-  background: #92c3eeb7;
 }
 
-.sign-btn {
-  font-family: Roboto Flex, sans-serif;
-  text-decoration: none;
-  color: #414141;
-  font-size: 16px;
+$color: #01AEDD;
 
+.sign-btn {
+  text-decoration: none;
+  // display: inline-block;
+  padding: 10px 5px;
+  border-radius: 10px;
+  color: #fafafa;
+  font-size: 16px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    border-radius: 10px;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken($color, 15%);
+    transition: all .3s;
+    border-radius: 10px;
+    z-index: -1;
+  }
   &:hover {
-    color: #fafafa;
+    color: #fff;
+    &:before {
+      width: 100%;
+    }
   }
 }
 
@@ -115,6 +150,7 @@ nav {
   .main-navlinks {
     order: 1;
   }
+
   /* Hamburger */
   .hamburger {
     width: 20px;
@@ -169,6 +205,7 @@ nav {
     border-right: 1px solid #c5c5c6;
     transform: translate(-100%);
   }
+
   .open {
     transform: translate(0%);
   }
