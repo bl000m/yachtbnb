@@ -3,6 +3,24 @@
     <span>Stop dreaming your life</span>
     <span>live your dreams</span>
   </h1>
+
+     <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-6" data-controller="geocode">
+          <form class="d-flex my-5">
+            <input type="text" class="form-control flex-grow-1 me-2" placeholder="Type an address" data-geocode-target="address">
+            <input type="submit" data-action="click->geocode#show" value="Geocode!" class="btn btn-primary">
+          </form>
+          <p class="font-monospace lead text-center fw-bold" data-geocode-target="coordinates">
+            <!-- coordinates here -->
+          </p>
+          <div id="map" style="height: 300px; width: 600px">
+            <!-- map in this div -->
+          </div>
+        </div>
+      </div>
+    </div>
+
   <div class="card-container">
     <% @yachts.each do |yacht| %>
       <div class="card-wrapper">

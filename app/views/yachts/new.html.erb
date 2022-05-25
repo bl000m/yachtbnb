@@ -1,0 +1,28 @@
+<div class="form-container">
+  <div class="form-wrapper">
+    <h2>New yacht</h2>
+    <%= simple_form_for(@yacht) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :name,
+                    required: true,
+                    autofocus: true %>
+        <%= f.input :address,
+                    required: true,
+                    autofocus: true %>
+        <%= f.input :price,
+                    required: true,
+                    autofocus: true %>
+        <%= f.input :description,
+                    required: true,
+                    autofocus: true %>
+        <%= f.input :voyager,
+                    required: true,
+                    autofocus: true %>
+      </div>
+
+      <div class="list-btn">
+        <%= f.button :submit, "Add to your yachts" %>
+      </div>
+    <% end %>
+  </div>
+</div>
