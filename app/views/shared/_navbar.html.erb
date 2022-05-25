@@ -1,32 +1,33 @@
 <nav>
-  <a href="#" class="nav-icon" aria-label="visit homepage" aria-current="page" data-controller="navbar" data-action="#">
-    <%= link_to image_tag ("boat.png"), :controller => 'top_yachts', :class => 'dock-item'%>
-    <span>Yachtbnb</span>
-  </a>
-
-  <div class="main-navlinks">
-    <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="navlinks-container">
+  <div class="nav-logo">
+    <a href="#" class="nav-icon" aria-label="visit homepage" aria-current="page" data-controller="navbar" data-action="#">
+      <%= link_to image_tag ("boat.png"), :controller => 'top_yachts', :class => 'dock-item'%>
+      <span>Yachtbnb</span>
+    </a>
+  </div>
+  <div class="navlinks-container">
+    <% if user_signed_in? %>
       <%= link_to 'Home', top_yachts_path %>
       <a href="#">Your profile</a>
       <%= link_to 'Your yachts', yachts_path %>
-    </div>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+    <% end %>
   </div>
 
-  <div class="nav-authentication">
     <% if user_signed_in? %>
         <%= image_tag "cousteau.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
     <% else %>
       <div class="sign-btns">
           <%= link_to "Sign in / Sign up", new_user_session_path, class: "sign-btn" %>
       </div>
     <% end %>
-  </div>
+
 </nav>
+
+<!--<div class="main-navlinks">
+    <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>-->

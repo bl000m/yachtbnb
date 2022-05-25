@@ -1,6 +1,7 @@
 .yacht-img {
   width: 100%;
   height: 200px;
+  filter: opacity(70%);
 }
 
 .yacht-img-show {
@@ -31,8 +32,7 @@
   position: relative;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.8s cubic-bezier
-  (0.86,0,0.07,1);
+  transition: transform 0.8s cubic-bezier(0.86,0,0.07,1);
   color: black;
   font-weight: bold;
 }
@@ -42,7 +42,6 @@
   height: 100%;
   width: 100%;
   padding: 30px;
-  border-radius: 8px;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -54,15 +53,10 @@
   justify-content: space-between;
 }
 
-.card-wrapper:nth-child(even) .card-front {
-  background: #1a2f42;
-  color: #fafafa;
-  font-weight: bold;
-}
-
 .card-front p {
-  font-size: 25px;
+  font-size: 20px;
   line-height: 35px;
+  letter-spacing: 1.5px;
 }
 
 .arrow-icon {
@@ -76,7 +70,7 @@
 }
 
 .card-price span {
-  font-size: 30px;
+  font-size: 16px;
 }
 
 .card-back {
@@ -87,6 +81,14 @@
   align-items: center;
 }
 
+// .card-wrapper:nth-child(even).card-back {
+//   background: #1a2f42;
+// }
+
+// .card-wrapper:nth-child(even).card-back {
+//   background: #01AEDD;
+// }
+
 .card-back a {
   display: inline-block;
   border-radius: 10px;
@@ -94,15 +96,15 @@
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  font-weight: normal;
+  font-weight: bold;
   background-color: #fff;
   font-size: 14px;
-  color:  #333;
+  color:  #1a2f42;
   transition: background-color 0.3s ease-out,
   color 0.3s ease-out;
 
   &:hover {
-    background-color: #ed5d34;
+    background-color: #01AEDD;
     color: #fff;
   }
 }

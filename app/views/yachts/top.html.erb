@@ -1,12 +1,29 @@
 <div class="container">
   <h1>
-    <span>Stop dreaming your life</span>
-    <span>live your dreams</span>
-    <br>
-    <%= link_to "See all the yachts", yachts_path, class: "btn-index" %>
+    <span>Stop dreaming your life,</span>
+    <span>live your dreams...</span>
+  </h1>
 
-    <h3>Search by rate</h3>
-    <div class="search-form">
+  <div class="top-bar-container">
+    <div class="list-btn">
+      <%= link_to "Sort by price", yachts_path, class: "btn-index" %>
+    </div>
+    <span class="separation">|</span>
+    <div class="list-btn">
+      <%= link_to "Sort by ranking", yachts_path, class: "btn-index" %>
+    </div>
+    <span class="separation">|</span>
+    <div class="list-btn">
+      <%= link_to "See all the yachts", yachts_path, class: "btn-index" %>
+    </div>
+    <span class="separation">|</span>
+    <div class="search-box">
+      <button class="btn-search">
+        <i class="fas fa-search"></i>
+      </button>
+      <input type="text" class="input-search" placeholder="Type to Search...">
+    </div>
+    <!--<div class="search-box">
       <%= form_tag(yachts_path, method: :get) do %>
       <%= text_field_tag(:search_by_rate, params[:search_by_rate]) %>
       <button name="button" type="submit">
@@ -14,20 +31,22 @@
       </button>
       <% end %>
       <%= button_to "Clear this search", yachts_path, method: :get, class: "btn" %>
-    </div>
+      </div>-->
+  </div>
 
-  </h1>
   <div class="card-container">
     <% @yachts.each do |yacht| %>
       <div class="card-wrapper">
         <div class="card">
           <div class="card-front">
-            <p><%= yacht.name %></p>
-            <%= image_tag "yacht.jpg", class: "yacht-img"%>
+            <p><%= yacht.name.capitalize %></p>
+            <%= image_tag "yacht_loc.jpg", class: "yacht-img"%>
             <div class="card-price">
               <span><%= yacht.price%>€ / day</span>
-              <br>
-              <p><%= yacht.stars%> stars</p>
+
+            </div>
+            <div class="ranking-info">
+              <span><!--<%= yacht.stars%>--><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
             </div>
             <i class="arrow-icon fas fa-arrow-right"></i>
           </div>
@@ -40,3 +59,4 @@
     <% end %>
   </div>
 </div>
+
