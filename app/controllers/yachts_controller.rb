@@ -11,11 +11,11 @@ class YachtsController < ApplicationController
   def index
     @yachts = Yacht.search_by_rate(params[:search_by_rate])
     @markers = @yachts.geocoded.map do |yacht|
-    {
-      lat: yacht.latitude,
-      lng: yacht.longitude
-    }
-  end
+      {
+        lat: yacht.latitude,
+        lng: yacht.longitude
+      }
+    end
   end
 
   def edit
