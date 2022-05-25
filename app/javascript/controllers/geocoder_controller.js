@@ -2,13 +2,6 @@ import { Controller } from "stimulus"
 import mapboxgl from "mapbox-gl"
 
 export default class extends Controller {
-    static targets = ["coordinates", "address"]
-
-    connect() {
-      console.log("The 'geocode' controller is now loaded!");
-    }
-
-export default class extends Controller {
   static targets = ["coordinates", "address"]
 
   connect() {
