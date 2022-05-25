@@ -21,13 +21,18 @@ class YachtsController < ApplicationController
   end
 
   def index
-    @yachts = Yacht.search_by_rate(params[:search_by_rate])
+    @yachts = Yacht.near(params[:address], 1000)
+    @yachts = Yacht.where("voyager >= ?", params[:voyager])
+    @yachts = Yacht.near(params[:address], 1000)
+
+    # @yachts = Yacht.(params[:search_by_rate])
     @markers = @yachts.geocoded.map do |yacht|
       {
         lat: yacht.latitude,
         lng: yacht.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { yacht: yacht }),
-        image_url: helpers.asset_url("boat")
+        # info_window: render_to_string(partial: "info_window", locals: { yacht: yacht }),
+        # image_url: helpers.asset_url("boat")
+
       }
     end
   end
