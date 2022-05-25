@@ -22,6 +22,12 @@ class YachtsController < ApplicationController
 
   def index
     @yachts = Yacht.search_by_rate(params[:search_by_rate])
+    @markers = @yachts.geocoded.map do |yacht|
+      {
+        lat: yacht.latitude,
+        lng: yacht.longitude
+      }
+    end
   end
 
   def edit
@@ -33,8 +39,8 @@ class YachtsController < ApplicationController
 
   def create
     @yacht = Yacht.new(yacht_params)
-    # @yacht.user = current_user
-    # @yacht.save!
+    @yacht.user = current_user
+    @yacht.save!
   end
 
   def updated
@@ -47,6 +53,6 @@ class YachtsController < ApplicationController
   end
 
   def yacht_params
-    params.require(:yacht).permit(:name, :address, :price, :stars, :search_by_rate)
+    params.require(:yacht).permit(:name, :address, :price, :stars, :voyager, :coordinates, :search_by_rate)
   end
 end

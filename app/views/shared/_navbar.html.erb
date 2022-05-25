@@ -12,7 +12,7 @@
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <a href="#">Profile</a>
           <%= link_to 'Your yachts', yachts_path %>
-          <%= link_to 'Add a yacht', yachts_path %>
+          <%= link_to 'Add a yacht', new_yacht_path %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
         </div>
       </div>
