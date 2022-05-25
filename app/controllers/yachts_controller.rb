@@ -2,6 +2,7 @@ class YachtsController < ApplicationController
   before_action :set_yacht, only: [:show, :edit, :update, :destroy]
 
   def show
+    @booking = Booking.new
   end
 
   def top

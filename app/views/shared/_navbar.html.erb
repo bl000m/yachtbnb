@@ -5,18 +5,17 @@
       <span>Yachtbnb</span>
     </a>
   </div>
-  <div class="navlinks-container">
-    <% if user_signed_in? %>
-      <%= link_to 'Home', top_yachts_path %>
-      <a href="#">Your profile</a>
-      <%= link_to 'Your yachts', yachts_path %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    <% else %>
-    <% end %>
-  </div>
 
     <% if user_signed_in? %>
+      <div class="nav-item dropdown">
         <%= image_tag "cousteau.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <a href="#">Profile</a>
+          <%= link_to 'Your yachts', yachts_path %>
+          <%= link_to 'Add a yacht', yachts_path %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        </div>
+      </div>
     <% else %>
       <div class="sign-btns">
           <%= link_to "Sign in / Sign up", new_user_session_path, class: "sign-btn" %>

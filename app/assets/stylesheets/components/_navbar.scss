@@ -50,8 +50,14 @@ nav {
 .hamburger {
   display: none;
 }
-.navlinks-container a {
-  margin: 0 10px;
+
+.dropdown-menu {
+  text-align: center;
+  border-radius: 10px;
+}
+
+.dropdown-menu a {
+  margin: 10px;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
@@ -59,7 +65,7 @@ nav {
   display: inline-block;
   position: relative;
 }
-.navlinks-container a::after {
+.dropdown-menu a::after {
   content: "";
   display: block;
   position: absolute;
@@ -68,11 +74,11 @@ nav {
   height: 1px;
   transform: scaleX(0);
   transform-origin: left;
-  background: #333;
+  background: #01AEDD;
   transition: transform 0.3s ease-out;
 }
 
-.navlinks-container a:hover::after {
+.dropdown-menu a:hover::after {
   transform: scaleX(1)
 }
 
