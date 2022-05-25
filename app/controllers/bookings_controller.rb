@@ -8,8 +8,11 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.yacht = Yacht.find(params[:yacht_id])
+
     if @booking.save
-      redirect_to @booking, notice: 'Yacht was successfully reserved.'
+      redirect_to booking_path(@booking), notice: 'Yacht was successfully reserved.'
     else
       render :new
     end
@@ -41,6 +44,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date)
+    params.require(:booking).permit(:start_date, :end_date, :voyager)
   end
 end
