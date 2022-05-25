@@ -1,9 +1,84 @@
+<div class="container">
+  <h1>
+    <%= @yacht.name.capitalize %>
+  </h1>
+
+  <div class="row">
+    <div class="column">
+      <div class="heading-content">
+        <h3>One of best</h3>
+      </div>
+      <div class="pictures-container">
+        <%= image_tag "yacht_loc.jpg", class: "yacht-img-show"%>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="heading-content">
+        <h3>Have a swim</h3>
+      </div>
+      <div class="pictures-container">
+        <%= image_tag "pool.jpg", class: "yacht-img-show"%>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="heading-content">
+        <h3>Enjoy your nights</h3>
+      </div>
+      <div class="pictures-container">
+        <%= image_tag "bedroom.jpg", class: "yacht-img-show"%>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="heading-content">
+        <h3>Take some rest</h3>
+      </div>
+      <div class="pictures-container">
+        <%= image_tag "living.jpg", class: "yacht-img-show"%>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="heading-content">
+        <h3>Invite your friends</h3>
+      </div>
+      <div class="pictures-container">
+        <%= image_tag "interior.jpg", class: "yacht-img-show"%>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="infos-content">
+        <h3>Yacht infos</h3>
+      </div>
+      <div class="infos-container">
+        <div class="infos-text">
+          <h4>Description:</h4>
+          <p class="description"><%= @yacht.description%></p>
+        </div>
+
+        <div class="infos-text">
+          <h4>Price:</h4>
+          <p class="description"><%= @yacht.price%>€ / day</p>
+        </div>
+
+        <div class="infos-text">
+          <h4>Note:</h4>
+          <p class="description"><%= @yacht.stars%> 5/5</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <%# <%= @yacht.name %>
 <%# <%= @yacht.address %>
 <%# <%= @yacht.price %>
 <%# <%= @yacht.description %>
 
-<div class="card">
+<!--<div class="card">
   <div class="card-front">
     <p><%= @yacht.name %></p>
       <%= image_tag "yacht.jpg", class: "yacht-img-show"%>
@@ -15,5 +90,11 @@
             <p class="description"><%= @yacht.description%></p>
             <p><%= @yacht.stars%> stars</p>
         </div>
+        <div>
+        <%= render 'shared/booking_form' %>
+        </div>
   </div>
+
+<div id="booking-form-div"
+     data-bookings="<%= @bookings_dates.to_json %>">
 </div>

@@ -1,0 +1,59 @@
+.row {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.column {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.heading-content {
+  flex-grow: 1;
+}
+
+.heading-content h3 {
+  font-size: 25px;
+  color: #1a2f42;
+  padding: 0 15px;
+}
+
+.heading-content p {
+  font-size: 16px;
+  color: #1a2f42;
+  padding: 0 15px;
+}
+
+.yacht-img-show {
+  height: 400px;
+  width: 600px;
+}
+
+.infos-content {
+  flex-grow: 1;
+}
+
+.infos-content h3 {
+  font-size: 25px;
+  color: #1a2f42;
+  padding: 0 15px;
+}
+
+.infos-container {
+  height: 300px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.infos-container p {
+  font-size: 16px;
+  color: #1a2f42;
+  padding: 0 20px;
+}
+
+.infos-container h4 {
+  font-size: 20px;
+  color: #1a2f42;
+}

@@ -2,6 +2,18 @@ class YachtsController < ApplicationController
   before_action :set_yacht, only: [:show, :edit, :update, :destroy]
 
   def show
+    @booking = Booking.new
+
+
+    @yacht           = Yacht.find(params[:id])
+    @bookings       = @yacht.bookings
+    @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.start_date,
+        to:   booking.end_date
+      }
+    end
+
   end
 
   def top
@@ -20,6 +32,7 @@ class YachtsController < ApplicationController
         lng: yacht.longitude,
         # info_window: render_to_string(partial: "info_window", locals: { yacht: yacht }),
         # image_url: helpers.asset_url("boat")
+
       }
     end
   end
