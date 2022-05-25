@@ -1,7 +1,10 @@
 <div class="container">
   <div class="form-wrapper">
-    <h2>Book a yacht</h2>
+    <h2>Book your yacht</h2>
     <%= simple_form_for [@yacht, @booking] do |f| %>
+      <%= f.input :voyager, label: "nombre de loup de mer:",
+                             as: :integer,
+                             required: false %>
       <%= f.input :start_date, label: "Sélectionnez vos dates:",
                                as: :string,
                                required: false,
