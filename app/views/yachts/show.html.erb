@@ -65,6 +65,11 @@
         </div>
 
         <div class="infos-text">
+          <h4>Pers max</h4>
+          <p class="description"><%= @yacht.voyager%> pers max</p>
+        </div>
+
+        <div class="infos-text">
           <h4>Note:</h4>
           <p class="description"><%= @yacht.stars%> 5/5</p>
         </div>
@@ -84,15 +89,15 @@
   </div>
 </div>
 
-<%# <%= @yacht.name %>
-<%# <%= @yacht.address %>
-<%# <%= @yacht.price %>
-<%# <%= @yacht.description %>
+<%= @yacht.name %>
+<%= @yacht.address %>
+<%= @yacht.price %>
+<%= @yacht.description %>
 
-<!--<div class="card">
+<div class="card">
   <div class="card-front">
     <p><%= @yacht.name %></p>
-      <%= image_tag "yacht.jpg", class: "yacht-img-show"%>
+      <%= image_tag "yacht_loc.jpg", class: "yacht-img-show"%>
         <div class="card-price">
           <span><%= @yacht.price%>€ / day</span>
             <br>

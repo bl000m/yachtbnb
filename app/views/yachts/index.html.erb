@@ -5,7 +5,6 @@
   </h1>
 
   <div style="width: 100%; height: 600px;"
-
       data-controller="mapbox"
       data-mapbox-markers-value="<%= @markers.to_json %>"
       data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -17,7 +16,7 @@
         <div class="card">
           <div class="card-front">
             <p><%= yacht.name %></p>
-            <%= image_tag "yacht.jpg", class: "yacht-img"%>
+            <%= image_tag "yacht_loc.jpg", class: "yacht-img"%>
             <div class="card-price">
               <span><%= yacht.price%>€ / day</span>
               <br>
