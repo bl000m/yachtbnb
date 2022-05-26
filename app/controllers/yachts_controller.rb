@@ -32,6 +32,12 @@ class YachtsController < ApplicationController
       @yachts = @yachts.where("voyager >= ?", params[:voyager])
     end
 
+    if params[:start_date].present? && params[:end_date].present?
+      start_date = Date.parse(params[:start_date])
+      end_date = Date.parse(params[:end_date])
+      @yachts = @yachts.available_for(start_date, end_date)
+    end
+
     @markers = @yachts.geocoded.map do |yacht|
       {
         lat: yacht.latitude,
@@ -60,7 +66,12 @@ class YachtsController < ApplicationController
     end
   end
 
-  def updated
+  def update
+    if @yacht.update(yacht_params)
+      redirect_to yacht_path(@yacht), notice: 'Yacht was successfully updated'
+    else
+      render "edit"
+    end
   end
 
   private
