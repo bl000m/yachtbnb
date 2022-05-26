@@ -52,8 +52,12 @@ class YachtsController < ApplicationController
   def create
     @yacht = Yacht.new(yacht_params)
     @yacht.user = current_user
-    @yacht.save!
-    # créer red
+
+    if @yacht.save
+      redirect_to yacht_path(@yacht), notice: 'Yacht was successfully added'
+    else
+      render :new
+    end
   end
 
   def updated
@@ -66,6 +70,6 @@ class YachtsController < ApplicationController
   end
 
   def yacht_params
-    params.require(:yacht).permit(:name, :address, :price, :stars, :voyager, :coordinates, :search_by_rate)
+    params.require(:yacht).permit(:name, :address, :description, :price, :stars, :voyager, :coordinates, :search_by_rate)
   end
 end
