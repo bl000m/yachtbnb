@@ -1,5 +1,5 @@
 <div class="form-wrapper new-yacht-form">
-    <%= simple_form_for(@yacht) do |f| %>
+    <%= simple_form_for(yacht) do |f| %>
       <div class="form-content">
         <div class="form-input">
           <%= f.input :name,
@@ -22,6 +22,16 @@
         <div class="form-input">
           <%= f.input :voyager,
                       autofocus: true %>
+        </div>
+
+        <div class="form-input">
+          <%= f.input :photo,
+                      as: :file, label: "featured photo" %>
+        </div>
+
+        <div class="form-input">
+          <%= f.input :photos, as: :file,
+          label: "secondary photo", input_html: {multiple: true}  %>
         </div>
         <div class= "form-button">
           <%= f.button :submit, "Submit", class: "form-button-text"%>

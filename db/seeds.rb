@@ -8,6 +8,7 @@ coustau = User.create!(email: "yacht@yacht.com", password: "yachtyacht", usernam
 elon_musk = User.create!(email: "yacht@gmail.com", password: "yachtyacht", username: 'Elon Musk')
 jeff_bezos = User.create!(email: "yacht@yahoo.com", password: "yachtyacht", username: 'Jeff Bezos')
 
+puts "Creating yachts..."
 
 Yacht.create!(
   name: "HERMIONE",
@@ -18,7 +19,6 @@ Yacht.create!(
   stars: 5,
   voyager: 8
 )
-
 
 Yacht.create!(
   name: "MORPHEUS",
@@ -109,5 +109,12 @@ Yacht.create!(
   stars: 5,
   voyager: 8
 )
+
+puts "Attaching images"
+
+Yacht.all.each do |yacht|
+  photo = File.open("app/assets/images/yacht_loc.jpg")
+  yacht.photo.attach(io: photo, filename: "yacht_photo")
+end
 
 puts "db well created"
