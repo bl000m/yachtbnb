@@ -6,7 +6,7 @@
 
   <div class="top-bar-container">
 
-    <%= form_tag(yachts_path, method: :get, class: "search-box") do %>
+    <%= form_tag(root_path, method: :get, class: "search-box") do %>
       <%= text_field_tag(:address, nil, class: "where-search", placeholder: "Location") %>
       <%= text_field_tag(:voyager, nil, class: "with-search", placeholder: "Passengers") %>
 
