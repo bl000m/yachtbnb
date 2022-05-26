@@ -5,19 +5,10 @@
   </h1>
 
   <div class="top-bar-container">
-   <!-- <div class="search-box">
-      <input type="text class="where-search" name="" value= placeholder ="Where...">
-      <input type="text" class="when-search" placeholder="When...">
-      <input type="text" class="with-search" placeholder="With...">
-      <button class="btn-search">
-        <i class="fas fa-search"></i>
-      </button>
-    </div>-->
 
     <%= form_tag(yachts_path, method: :get, class: "search-box") do %>
       <%= text_field_tag(:address, nil, class: "where-search", placeholder: "Location") %>
       <%= text_field_tag(:voyager, nil, class: "with-search", placeholder: "Passengers") %>
-      <%= text_field_tag(:date, nil, class: "when-search", placeholder: "Dates") %>
 
       <%= button_to nil, method: :get, class: "btn", type: "submit" do %>
         <i class="fas fa-search"></i>
