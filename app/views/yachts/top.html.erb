@@ -18,6 +18,7 @@
       <%= text_field_tag(:address, nil, class: "where-search", placeholder: "Location") %>
       <%= text_field_tag(:voyager, nil, class: "with-search", placeholder: "Passengers") %>
       <%= text_field_tag(:date, nil, class: "when-search", placeholder: "Dates") %>
+
       <%= button_to nil, method: :get, class: "btn", type: "submit" do %>
         <i class="fas fa-search"></i>
       <% end %>
