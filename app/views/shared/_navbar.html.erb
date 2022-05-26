@@ -1,7 +1,9 @@
 <nav>
   <div class="nav-logo">
     <a href="#" class="nav-icon" aria-label="visit homepage" aria-current="page" data-controller="navbar" data-action="#">
-      <%= link_to image_tag ("boat.png"), :controller => 'top_yachts', :class => 'dock-item'%>
+      <%= link_to root_path do %>
+      <%= image_tag "boat.png", class:'dock-item' %>
+      <% end %>
       <span>Yachtbnb</span>
     </a>
   </div>
@@ -11,7 +13,7 @@
         <%= image_tag "patrick.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <a href="#">Profile</a>
-          <%= link_to 'Your yachts', yachts_path %>
+          <%= link_to 'Your yachts', root_path %>
           <%= link_to 'Add a yacht', new_yacht_path %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
         </div>

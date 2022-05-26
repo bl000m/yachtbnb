@@ -29,13 +29,13 @@ h1 span:nth-child(1) {
 }
 
 .top-bar-container {
+  margin: 50px;
   width: 600px;
   display: flex;
   justify-content: center;
   background: #fafafa;
   align-items: center;
   border-radius: 50px;
-  border: 2px solid #1a2f42;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
 }
 

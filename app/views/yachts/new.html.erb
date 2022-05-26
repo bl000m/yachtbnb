@@ -1,7 +1,8 @@
 <div class="form-container">
-  <div class="form-wrapper">
-    <h2>New yacht</h2>
+  <h1>New yacht</h1>
+  <div class="form-wrapper new-yacht-form">
     <%= simple_form_for(@yacht) do |f| %>
+
       <div class="form-inputs">
         <%= f.input :name,
                     required: true,
@@ -26,6 +27,7 @@
 
       <div class= "add-btn">
         <%= f.button :submit, "add this yacht to your list"%>
+
       </div>
     <% end %>
   </div>
