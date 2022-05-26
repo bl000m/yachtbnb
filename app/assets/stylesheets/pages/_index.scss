@@ -19,6 +19,11 @@ h1 {
   letter-spacing: 1.5px;
 }
 
+h2 {
+  color: #1a2f42;
+  letter-spacing: 1.5px;
+}
+
 h1 span {
   display: inline;
 }
@@ -28,33 +33,36 @@ h1 span:nth-child(1) {
   color: #01AEDD;
 }
 
-.top-bar-container {
+.searchbar-container {
   margin: 50px;
-  width: 600px;
-  display: flex;
-  justify-content: center;
+  width: 480px;
   background: #fafafa;
-  align-items: center;
   border-radius: 50px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
 }
 
-// search bar
-.search-box{
-  width: fit-content;
-  height: fit-content;
-  position: relative;
+.searchbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
+
+// search bar
+// .search-box{
+//   width: fit-content;
+//   height: fit-content;
+//   position: relative;
+// }
 
 .where-search, .when-search, .with-search {
   border-style: none;
-  height: 40px;
-  width: 150px;
   background-color: transparent;
 }
 
-.where-search, .with-search {
+.where-search {
   border-right: 2px solid #1a2f42;
+  margin-left: 10px;
 }
 
 .where-search::placeholder, .when-search::placeholder, .with-search::placeholder {
@@ -72,4 +80,22 @@ h1 span:nth-child(1) {
   &:hover {
     color: #fafafa;
   }
+}
+
+// index sections
+
+.index-section {
+  width: 100%;
+  margin-top: 80px;
+}
+
+.index-section-heading {
+  border-bottom: 2px solid #1a2f42;
+}
+
+.index-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
 }
