@@ -1,5 +1,6 @@
 class YachtsController < ApplicationController
   before_action :set_yacht, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :top
 
   def show
     @booking = Booking.new
@@ -21,16 +22,22 @@ class YachtsController < ApplicationController
   end
 
   def index
-    @yachts = Yacht.near(params[:address], 100)
-    @yachts = Yacht.where("voyager >= ?", params[:voyager])
-    # @yachts = Yacht.(params[:search_by_rate])
+    @yachts = Yacht.all
+
+    if params[:address].present?
+      @yachts = @yachts.near(params[:address], 100)
+    end
+
+    if params[:voyager].present?
+      @yachts = @yachts.where("voyager >= ?", params[:voyager])
+    end
+
     @markers = @yachts.geocoded.map do |yacht|
       {
         lat: yacht.latitude,
         lng: yacht.longitude,
         info_window: render_to_string(partial: "info_window", locals: { yacht: yacht }),
         image_url: helpers.asset_url("boat")
-
       }
     end
   end
@@ -46,6 +53,7 @@ class YachtsController < ApplicationController
     @yacht = Yacht.new(yacht_params)
     @yacht.user = current_user
     @yacht.save!
+    # créer red
   end
 
   def updated
