@@ -35,7 +35,8 @@ h1 span:nth-child(1) {
   background: #fafafa;
   align-items: center;
   border-radius: 50px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  border: 2px solid #1a2f42;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
 }
 
 // search bar
@@ -47,13 +48,13 @@ h1 span:nth-child(1) {
 
 .where-search, .when-search, .with-search {
   border-style: none;
-  height: 50px;
-  width: 170px;
-  background-color: #fafafa;
+  height: 40px;
+  width: 150px;
+  background-color: transparent;
 }
 
-.where-search, .when-search {
-  border-right: 1px solid #1a2f42;
+.where-search, .with-search {
+  border-right: 2px solid #1a2f42;
 }
 
 .where-search::placeholder, .when-search::placeholder, .with-search::placeholder {
@@ -72,4 +73,3 @@ h1 span:nth-child(1) {
     color: #fafafa;
   }
 }
-

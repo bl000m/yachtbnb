@@ -1,6 +1,7 @@
 .row {
   max-width: 900px;
   margin: 0 auto;
+  padding-bottom: 140px;
 }
 
 .column {
@@ -16,6 +17,8 @@
   font-size: 25px;
   color: #1a2f42;
   padding: 0 15px;
+  position: sticky;
+  top: 100px;
 }
 
 .heading-content p {
@@ -27,6 +30,7 @@
 .yacht-img-show {
   height: 400px;
   width: 600px;
+  border-radius: 10px;
 }
 
 .infos-content {
@@ -37,6 +41,8 @@
   font-size: 25px;
   color: #1a2f42;
   padding: 0 15px;
+  position: sticky;
+  top: 100px;
 }
 
 .infos-container {
@@ -56,4 +62,36 @@
 .infos-container h4 {
   font-size: 20px;
   color: #1a2f42;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #1a2f42;
+  border-radius: 10px;
+}
+
+.details h5 {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #1a2f42;
+  margin-bottom: 15px;
+}
+
+.yacht-icon {
+  height: 40px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #1a2f42;
+  border-radius: 10px;
+  height: 600px;
 }
