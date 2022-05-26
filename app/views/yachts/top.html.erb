@@ -15,8 +15,10 @@
     </div>-->
 
     <%= form_tag(yachts_path, method: :get, class: "search-box") do %>
-      <%= text_field_tag(:address, nil, class: "where-search", placeholder: "Where...") %>
-      <%= text_field_tag(:voyager, nil, class: "with-search", placeholder: "With...") %>
+      <%= text_field_tag(:address, nil, class: "where-search", placeholder: "Location") %>
+      <%= text_field_tag(:voyager, nil, class: "with-search", placeholder: "Passengers") %>
+      <%= text_field_tag(:date, nil, class: "when-search", placeholder: "Dates") %>
+
       <%= button_to nil, method: :get, class: "btn", type: "submit" do %>
         <i class="fas fa-search"></i>
       <% end %>
@@ -32,10 +34,6 @@
             <%= image_tag "yacht_loc.jpg", class: "yacht-img"%>
             <div class="card-price">
               <span><%= yacht.price%>€ / day</span>
-
-            </div>
-            <div class="ranking-info">
-              <span><!--<%= yacht.stars%>-->4,5/5</span>
             </div>
             <i class="arrow-icon fas fa-arrow-right"></i>
           </div>

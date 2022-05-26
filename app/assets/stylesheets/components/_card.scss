@@ -71,6 +71,9 @@
 }
 
 .card-price span {
+  position: absolute;
+  left: 30px;
+  bottom: 15px;
   font-size: 16px;
 }
 
@@ -81,14 +84,6 @@
   justify-content: center;
   align-items: center;
 }
-
-// .card-wrapper:nth-child(even).card-back {
-//   background: #1a2f42;
-// }
-
-// .card-wrapper:nth-child(even).card-back {
-//   background: #01AEDD;
-// }
 
 .card-back a {
   display: inline-block;
