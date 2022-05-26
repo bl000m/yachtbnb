@@ -57,10 +57,13 @@ h1 span:nth-child(1) {
 
 .where-search, .when-search, .with-search {
   border-style: none;
+  height: 40px;
+  width: 120px;
   background-color: transparent;
+  text-align: center;
 }
 
-.where-search {
+.where-search, .with-search {
   border-right: 2px solid #1a2f42;
   margin-left: 10px;
 }
