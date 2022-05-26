@@ -1,7 +1,7 @@
 require 'faker'
 
-Yacht.destroy_all
 Booking.destroy_all
+Yacht.destroy_all
 User.destroy_all
 
 user = User.create!(email: "yacht@yacht.com", password: "yachtyacht", username: 'Comandant Coustau')

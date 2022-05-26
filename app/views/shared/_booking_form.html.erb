@@ -1,11 +1,14 @@
 <div class="container">
   <div class="form-wrapper">
-    <h2>Book your yacht</h2>
-    <%= simple_form_for [@yacht, @booking] do |f| %>
-      <%= f.input :voyager, label: "nombre de loup de mer:",
+    <div class="input-form booking-form-content">
+      <%= simple_form_for [@yacht, @booking] do |f| %>
+      <div class="passengers">
+        <%= f.input :voyager, label: "Number of passengers:",
                              as: :integer,
                              required: false %>
-      <%= f.input :start_date, label: "Sélectionnez vos dates:",
+      </div>
+      <div class="calendar">
+        <%= f.input :start_date, label: "Save your dates:",
                                as: :string,
                                required: false,
                                input_html: { id: "range_start", class: "d-none"} %>
@@ -13,7 +16,13 @@
                              as: :string,
                              required: false,
                              input_html: { id: "range_end", class: "d-none" } %>
-      <%= f.button :submit, "Book", class: "btn btn-primary" %>
+      </div>
+      <div class="booking-button">
+        <%= f.button :submit, "Book", class: "booking-form-button" %>
+      </div>
+
     <% end %>
+    </div>
+
   </div>
 </div>

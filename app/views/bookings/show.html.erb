@@ -1,7 +1,27 @@
-<h1>Enjoy your trip</h1>
-<br>
-<h2>your reservation:</h2>
-<br>
-<p>You will navigates on the amazing "<%= "#{@booking.yacht.name}" %>",
- with <%="#{@booking.voyager}"%> sea bass.
- you will lives your dream from <%="#{@booking.start_date}"%> to <%="#{@booking.end_date}"%></p>
+<div class="container">
+  <h1>See you on board</h1>
+  <%= image_tag "cruize.jpg", class: "booking-picture"%>
+
+  <div class="booking-container">
+
+    <div class="heading-content">
+      <h3>Thanks god, you will finaly live your best life !!!</h3>
+    </div>
+
+    <div class="booking-details">
+      <h5>Your booking details:</h5>
+        <p>
+          <%= image_tag "yacht_icon.png", class: "booking-icon"%>  <%= @booking.yacht.name %>.
+        </p>
+        <p>
+          <%= image_tag "anchor.png", class: "booking-icon"%>  Capri.
+        </p>
+        <p>
+          <%= image_tag "people.png", class: "booking-icon"%>  8 pers.<%= @booking.voyager %>
+        </p>
+        <p>
+          <%= image_tag "calendar.png", class: "booking-icon"%>  From <%= @booking.start_date %> to <%= @booking.end_date %>.
+        </p>
+    </div>
+  </div>
+</div>
