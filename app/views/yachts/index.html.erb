@@ -16,7 +16,13 @@
         <div class="card">
           <div class="card-front">
             <p><%= yacht.name %></p>
-            <%= image_tag "yacht_loc.jpg", class: "yacht-img"%>
+             <% if yacht.photo.key %>
+              <%= cl_image_tag yacht.photo.key %>
+            <% else %>
+              <img src="https://res.cloudinary.com/stefc/image/upload/v1653570985/development/df33lzfti1h3m95nxvgvkkbjuba6.jpg" alt="yacht">
+            <% end %>
+             <div class="card-category">
+             </div>
             <div class="card-price">
               <span><%= yacht.price%>€ / day</span>
               <br>

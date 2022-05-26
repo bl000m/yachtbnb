@@ -20,6 +20,8 @@
         <%= f.input :voyager,
                     required: true,
                     autofocus: true %>
+        <%= f.input :photo, as: :file, label: "featured photo" %>
+        <%= f.input :photos, as: :file, label: "secondary photo", input_html: {multiple: true} %>
       </div>
 
       <div class= "add-btn">
