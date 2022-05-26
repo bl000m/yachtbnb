@@ -57,13 +57,16 @@
         <div class="infos-text">
           <h5>Details:</h5>
           <p>
-            <%= image_tag "description.png", class: "yacht-icon"%> <%= @yacht.description%>.
+            <%= image_tag "description.png", class: "yacht-icon yacht-description"%> <p> <%= @yacht.description%></p>
           </p>
           <p>
-            <%= image_tag "price.png", class: "yacht-icon"%> <%= @yacht.price%>€ / day.
+            <%= image_tag "price.png", class: "yacht-icon"%> <%= @yacht.price%> € / day.
           </p>
           <p>
-            <%= image_tag "people.png", class: "yacht-icon"%>  8 pers.<%= @booking.voyager %>
+            <%= image_tag "people.png", class: "yacht-icon"%> pers. max: <%= @yacht.voyager%>.
+          </p>
+          <p>
+            <%= image_tag "anchor.png", class: "yacht-icon"%> address: <%= @yacht.address %>.
           </p>
         </div>
       </div>
@@ -81,3 +84,4 @@
       </div>
   </div>
 </div>
+

@@ -48,12 +48,19 @@
 }
 
 .infos-container {
-  height: 300px;
+  height: auto;
   width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
+// #yacht-description{
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   max-height: 100px;
+// }
 
 .infos-container p {
   font-size: 16px;
