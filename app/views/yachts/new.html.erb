@@ -1,29 +1,33 @@
 <div class="form-container">
-  <div class="form-wrapper">
-    <h2>New yacht</h2>
+  <h1>New yacht</h1>
+  <div class="form-wrapper new-yacht-form">
     <%= simple_form_for(@yacht) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :name,
-                    required: true,
-                    autofocus: true %>
-        <%= f.input :address,
-                    required: true,
-                    autofocus: true,
-                    input_html: { data: { geocoder_target: "address" }, class: "d-none" },
-                     wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
-        <%= f.input :price,
-                    required: true,
-                    autofocus: true %>
-        <%= f.input :description,
-                    required: true,
-                    autofocus: true %>
-        <%= f.input :voyager,
-                    required: true,
-                    autofocus: true %>
-      </div>
-
-      <div class= "add-btn">
-        <%= f.button :submit, "add this yacht to your list"%>
+      <div class="form-content">
+        <div class="form-input">
+          <%= f.input :name,
+                      autofocus: true %>
+        </div>
+        <div class="form-input">
+          <%= f.input :address,
+                      autofocus: true,
+                      input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+                      wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+        </div>
+        <div class="form-input">
+          <%= f.input :price,
+                      autofocus: true %>
+        </div>
+        <div class="form-input">
+          <%= f.input :description,
+                      autofocus: true %>
+        </div>
+        <div class="form-input">
+          <%= f.input :voyager,
+                      autofocus: true %>
+        </div>
+        <div class= "form-button">
+          <%= f.button :submit, "Submit", class: "form-button-text"%>
+        </div>
       </div>
     <% end %>
   </div>
