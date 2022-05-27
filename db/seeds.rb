@@ -113,7 +113,7 @@ Yacht.create!(
 puts "Attaching images"
 
 Yacht.all.each do |yacht|
-  photo = File.open("app/assets/images/yacht_loc.jpg")
+  photo = URI.open("https://res.cloudinary.com/stefc/image/upload/v1653570985/development/df33lzfti1h3m95nxvgvkkbjuba6.jpg")
   yacht.photo.attach(io: photo, filename: "yacht_photo")
 end
 

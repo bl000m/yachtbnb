@@ -1,4 +1,18 @@
+
+<div class="accueil">
+  <div class="bloc-fondu">
+    <h1><%= image_tag "boat.png", class:'landing-icon' %>Yachtbnb</h1>
+    <p>Luxury yachts rental all over the world</p>
+  </div>
+  <div class="bloc-background">
+  </div>
+</div>
+
+
+<div class="container index-container">
+
 <div class="container">
+
   <h1>
     <span>Stop dreaming your life</span>
     <span>live your dreams</span>
@@ -8,42 +22,56 @@
     <%= form_tag(root_path, method: :get, class: "search-box") do %>
       <%= text_field_tag(:address, nil, class: "where-search", placeholder: "Location") %>
       <%= text_field_tag(:voyager, nil, class: "with-search", placeholder: "Passengers") %>
+      <%= date_field_tag(:start_date, nil, class: "where-search", placeholder: "Start date") %>
+      <%= date_field_tag(:end_date, nil, class: "where-search", placeholder: "End date") %>
       <%= button_to nil, method: :get, class: "btn", type: "submit" do %>
         <i class="fas fa-search"></i>
       <% end %>
     <% end %>
   </div>
 
-  <div style="width: 100%; height: 600px;"
-      data-controller="mapbox"
-      data-mapbox-markers-value="<%= @markers.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="index-section">
+    <div class="index-section-heading">
+      <h2>find your yacht</h2>
+    </div>
+    <div class="index-map">
+      <div style="width: 60%; height: 600px; border: 1px solid #1a2f42; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 2px 2px rgba(0,0,0,0.23);"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
   </div>
 
-  <div class="card-container">
-    <% @yachts.each do |yacht| %>
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="card-front">
-            <p><%= yacht.name %></p>
-             <% if yacht.photo.key %>
-              <%= cl_image_tag yacht.photo.key %>
-            <% else %>
-              <img src="https://res.cloudinary.com/stefc/image/upload/v1653570985/development/df33lzfti1h3m95nxvgvkkbjuba6.jpg" alt="yacht">
-            <% end %>
-             <div class="card-category">
-             </div>
-            <div class="card-price">
-              <span><%= yacht.price%>€ / day</span>
+  <div class="index-section">
+    <div class="index-section-heading">
+      <h2>Our yachts</h2>
+    </div>
+    <div class="card-container">
+      <% @yachts.each do |yacht| %>
+        <div class="card-wrapper">
+          <div class="card">
+            <div class="card-front">
+              <p><%= yacht.name %></p>
+              <% if yacht.photo.key %>
+                <%= cl_image_tag yacht.photo.key, class: "yacht-img" %>
+              <% else %>
+                <img src="https://res.cloudinary.com/stefc/image/upload/v1653570985/development/df33lzfti1h3m95nxvgvkkbjuba6.jpg" alt="yacht", class="yacht-img">
+              <% end %>
+              <div class="card-category">
+              </div>
+              <div class="card-price">
+                <span><%= yacht.price%>€ / day</span>
+              </div>
+              <i class="arrow-icon fas fa-arrow-right"></i>
             </div>
-            <i class="arrow-icon fas fa-arrow-right"></i>
-          </div>
-          <!--link to yacht show-->
-          <div class="card-back">
-            <%= link_to 'Rent this yacht', yacht_path(yacht), class: "btn" %>
+            <!--link to yacht show-->
+            <div class="card-back">
+              <%= link_to 'Rent this yacht', yacht_path(yacht), class: "btn" %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

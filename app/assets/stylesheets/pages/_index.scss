@@ -1,6 +1,54 @@
 // Import page-specific CSS files here.
 @import "home";
 
+// Landing section
+
+.accueil {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.bloc-fondu {
+  position: relative;
+  width: 30%;
+  height: 100%;
+  background: #F4F4F4;
+  box-shadow: 90px 0 100px 100px #F4F4F4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bloc-background {
+  background-image: url(landing.jpg);
+  width: 70%;
+  height: 100%;
+  background-position: 51% 49%;
+}
+
+.landing-icon {
+  width: 100px;
+}
+
+.bloc-fondu h1 {
+  font-size: 50px;
+  padding-top: 10vh;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.bloc-fondu p {
+  text-align: center;
+  padding-left: 1vh;
+  padding-top: 0;
+  font-size: 20px;
+
+}
+
+// Page container
+
 .container {
   width: 90%;
   max-width: 1400px;
@@ -11,11 +59,20 @@
   flex-direction: column;
 }
 
+.index-container {
+  padding-top: 100px;
+}
+
 h1 {
   color: #1a2f42;
   margin: 20px 0;
   padding-bottom: 20px;
   text-align: center;
+  letter-spacing: 1.5px;
+}
+
+h2 {
+  color: #1a2f42;
   letter-spacing: 1.5px;
 }
 
@@ -28,33 +85,32 @@ h1 span:nth-child(1) {
   color: #01AEDD;
 }
 
-.top-bar-container {
+.searchbar-container {
   margin: 50px;
-  width: 600px;
-  display: flex;
-  justify-content: center;
+  width: 480px;
   background: #fafafa;
-  align-items: center;
   border-radius: 50px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
 }
 
-// search bar
-.search-box{
-  width: fit-content;
-  height: fit-content;
-  position: relative;
+.searchbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .where-search, .when-search, .with-search {
   border-style: none;
   height: 40px;
-  width: 150px;
+  width: 120px;
   background-color: transparent;
+  text-align: center;
 }
 
 .where-search, .with-search {
   border-right: 2px solid #1a2f42;
+  margin-left: 10px;
 }
 
 .where-search::placeholder, .when-search::placeholder, .with-search::placeholder {
@@ -72,4 +128,22 @@ h1 span:nth-child(1) {
   &:hover {
     color: #fafafa;
   }
+}
+
+// index sections
+
+.index-section {
+  width: 100%;
+  margin-top: 80px;
+}
+
+.index-section-heading {
+  border-bottom: 2px solid #1a2f42;
+}
+
+.index-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
 }
