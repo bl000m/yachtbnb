@@ -36,7 +36,6 @@ class YachtsController < ApplicationController
     end
 
     @markers = @yachts.geocoded.map do |yacht|
-      raise
       {
         lat: yacht.latitude,
         lng: yacht.longitude,
