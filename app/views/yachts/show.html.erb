@@ -52,17 +52,19 @@
       </div>
     </div>
 
-    <div class="column">
-      <div class="infos-content">
-        <h3>Book your yacht</h3>
-      </div>
-      <div class="infos-container booking-form">
-        <div class="infos-text">
-          <%= render 'shared/booking_form' %>
-          <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
+    <% if  @yacht.user != current_user %>
+      <div class="column">
+        <div class="infos-content">
+          <h3>Book your yacht</h3>
+        </div>
+        <div class="infos-container booking-form">
+          <div class="infos-text">
+              <%= render 'shared/booking_form' %>
+              <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
+              </div>
+            </div>
           </div>
         </div>
-      </div>
     </div>
 
     <div class="column">
@@ -84,6 +86,6 @@
         </div>
       </div>
     </div>
-
+    <% end %>
   </div>
 </div>
