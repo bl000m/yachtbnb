@@ -13,7 +13,11 @@
   </head>
 
   <body>
-      <%= render 'shared/navbar' %>
+      <% if user_signed_in? && current_page?(controller: "yachts", action: "index")%>
+        <%= render 'shared/navbar' %>
+      <%else%>
+        <%= render 'shared/site_navbar' %>
+      <%end%>
       <%= render 'shared/flashes' %>
     <%= yield %>
   </body>
