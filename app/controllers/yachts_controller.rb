@@ -4,17 +4,14 @@ class YachtsController < ApplicationController
 
   def show
     @booking = Booking.new
-
-
-    @yacht           = Yacht.find(params[:id])
+    @yacht = Yacht.find(params[:id])
     @bookings       = @yacht.bookings
     @bookings_dates = @bookings.map do |booking|
       {
         from: booking.start_date,
-        to:   booking.end_date
+        to: booking.end_date
       }
     end
-
   end
 
   def top
@@ -43,7 +40,7 @@ class YachtsController < ApplicationController
         lat: yacht.latitude,
         lng: yacht.longitude,
         info_window: render_to_string(partial: "info_window", locals: { yacht: yacht }),
-        image_url: helpers.asset_url("boat")
+        image_url: helpers.asset_url("boat.png")
       }
     end
   end

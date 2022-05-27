@@ -9,18 +9,24 @@
       <div class="heading-content">
         <h3>One of best</h3>
       </div>
-        <div class="pictures-container">
 
-        </div>
-    </div>
-      <div class="column">
-        <div class="heading-content">
-          <h3>Have a swim</h3>
-        </div>
-        <div class="pictures-container">
-          
-        </div>
+
+
+      <div class="pictures-container">
+        <%= cl_image_tag @yacht.photo.key, class: "yacht-img-show"%>
       </div>
+    </div>
+    <div class="column">
+      <div class="heading-content">
+        <h3>Have a swim</h3>
+
+      </div>
+      <div class="pictures-container">
+        <% @yacht.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, class: "yacht-img-show"%>
+        <% end %>
+      </div>
+    </div>
 
     <div class="column">
       <div class="heading-content">
