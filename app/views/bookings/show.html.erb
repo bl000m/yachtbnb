@@ -20,11 +20,13 @@
           <%= image_tag "people.png", class: "booking-icon"%> <%= @booking.voyager %> pers.
         </p>
         <p>
-          <%= image_tag "calendar.png", class: "booking-icon"%>  From <%= @booking.start_date %> to <%= @booking.end_date %>.
+          <%= image_tag "calendar.png", class: "booking-icon"%>  From <%=  %> to <%= @booking.end_date %>.
         </p>
         <p>
-          <%= image_tag "people.png", class: "booking-icon"%> <%= @yacht.price %> €.
+          <%= image_tag "people.png", class: "booking-icon"%> <%= number_to_currency(@yacht.price * (@booking.end_date.day - @booking.start_date.day), unit: "€", format: "%n %u") %>.
         </p>
     </div>
   </div>
 </div>
+
+<%= console %>
