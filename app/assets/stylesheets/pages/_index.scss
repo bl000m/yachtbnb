@@ -1,6 +1,54 @@
 // Import page-specific CSS files here.
 @import "home";
 
+// Landing section
+
+.accueil {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.bloc-fondu {
+  position: relative;
+  width: 30%;
+  height: 100%;
+  background: #F4F4F4;
+  box-shadow: 90px 0 100px 100px #F4F4F4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bloc-background {
+  background-image: url(landing.jpg);
+  width: 70%;
+  height: 100%;
+  background-position: 51% 49%;
+}
+
+.landing-icon {
+  width: 100px;
+}
+
+.bloc-fondu h1 {
+  font-size: 50px;
+  padding-top: 10vh;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.bloc-fondu p {
+  text-align: center;
+  padding-left: 1vh;
+  padding-top: 0;
+  font-size: 20px;
+
+}
+
+// Page container
+
 .container {
   width: 90%;
   max-width: 1400px;
@@ -9,6 +57,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.index-container {
+  padding-top: 100px;
 }
 
 h1 {
@@ -47,13 +99,6 @@ h1 span:nth-child(1) {
   justify-content: space-between;
   width: 100%;
 }
-
-// search bar
-// .search-box{
-//   width: fit-content;
-//   height: fit-content;
-//   position: relative;
-// }
 
 .where-search, .when-search, .with-search {
   border-style: none;

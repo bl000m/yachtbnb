@@ -1,16 +1,13 @@
-<nav>
+<nav data-controller="navbar" data-action="scroll->navbar#connect">
   <div class="nav-logo">
-    <a href="#" class="nav-icon" aria-label="visit homepage" aria-current="page" data-controller="navbar" data-action="#">
-      <%= link_to root_path do %>
-      <%= image_tag "boat.png", class:'dock-item' %>
-      <% end %>
-      <span>Yachtbnb</span>
-    </a>
+    <p class="nav-icon" data-controller="navbar" data-action="scroll->navbar#connect">
+      <%= link_to "Yachtbnb", root_path, class: "nav-link" %>
+    </p>
   </div>
 
     <% if user_signed_in? %>
-      <div class="nav-item dropdown">
-        <%= image_tag "patrick.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <div class="nav-item dropdown" data-controller="navbar" data-action="scroll->navbar#connect">
+        <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <a href="#">Profile</a>
           <%= link_to 'Your yachts', root_path %>
@@ -25,10 +22,3 @@
     <% end %>
 
 </nav>
-
-<!--<div class="main-navlinks">
-    <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>-->
