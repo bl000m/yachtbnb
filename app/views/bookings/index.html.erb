@@ -1,0 +1,26 @@
+ <div class="container">
+    <h1>Hello <%= current_user.username %> ! </h1>
+    <%= image_tag "cruize.jpg", class: "booking-picture"%>
+
+ <div class="booking-container">
+
+<div>
+  <h1>Your reservations...</h1>
+  <% @bookings.each do |booking| %>
+    <div class="d-flex mb-5">
+      <%= cl_image_tag booking.yacht.photo.key, width: 200, height: 200, crop: :fill, border_radius: 50 %>
+      <div style="margin-left: 40px">
+        <p>
+          <%= image_tag "yacht_icon.png", class: "booking-icon"%>   You will raise anchor and sail the seas of life on lovely <%= booking.yacht.name %>.
+        </p>
+        <p>
+          <%= image_tag "anchor.png", class: "booking-icon"%>   you will leave from <%= booking.yacht.address %>.
+        </p>
+        <p>
+        <%= image_tag "calendar.png", class: "booking-icon"%>   leaving your dream from <%= booking.start_date.strftime("%d/%m/%Y") %> to <%= booking.end_date.strftime("%d/%m/%Y") %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
