@@ -6,17 +6,26 @@ export default class extends Controller {
     const logo = document.querySelector('.nav-item');
     const title = document.querySelector('.nav-icon');
 
-    window.addEventListener('scroll', () => {
+    console.log(window.location);
 
-    if(window.scrollY > 750){
-      navigation.classList.add('anim-nav');
-      logo.classList.add('anim-item');
-      title.classList.add('anim-icon');
-    } else {
-      navigation.classList.remove('anim-nav');
-      logo.classList.remove('anim-item');
-      title.classList.remove('anim-icon');
+    if(window.location.pathname === "/"){
+      
+      window.addEventListener('scroll', () => {
+
+        if(window.scrollY > 750){
+          navigation.classList.add('anim-nav');
+          logo.classList.add('anim-item');
+          title.classList.add('anim-icon');
+        } else {
+          navigation.classList.remove('anim-nav');
+          logo.classList.remove('anim-item');
+          title.classList.remove('anim-icon');
+        }
+      })
     }
-  })
+
+
+
+
   }
 }
