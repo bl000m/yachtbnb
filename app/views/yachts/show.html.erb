@@ -1,7 +1,5 @@
 <div class="container">
-  <h1>
-    <%= @yacht.name.capitalize %>
-  </h1>
+  <h1><%= @yacht.name.capitalize %></h1>
   <h2> <%= link_to "Edit info", edit_yacht_path %></h2>
 
   <div class="row">
@@ -13,56 +11,23 @@
 
 
       <div class="pictures-container">
-        <%= cl_image_tag @yacht.photo.key, class: "yacht-img-show"%>
-      </div>
-    </div>
-    <div class="column">
-      <div class="heading-content">
-        <h3>Have a swim</h3>
-
-      </div>
-      <div class="pictures-container">
-        <% @yacht.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, class: "yacht-img-show"%>
-        <% end %>
+        <%= cl_image_tag @yacht.photo.key, class: "yacht-img-show" %>
       </div>
     </div>
 
-    <div class="column">
-      <div class="heading-content">
-        <h3>Have a swim</h3>
-      </div>
-      <div class="pictures-container">
-        <%= image_tag "pool.jpg", class: "yacht-img-show"%>
-      </div>
-    </div>
+    <ul>
+      <% @yacht.photos.each do |photo| %>
+        <div class="column">
+          <div class="heading-content">
+            <h3><%= photo.filename.to_s.titleize.match(/(.*)(\..*)/)[1] %></h3>
+          </div>
+          <div class="pictures-container">
+            <%= cl_image_tag photo.key, class: "yacht-img-show"%>
+          </div>
+        </div>
+      <% end %>
+    </ul>
 
-    <div class="column">
-      <div class="heading-content">
-        <h3>Enjoy your nights</h3>
-      </div>
-      <div class="pictures-container">
-        <%= image_tag "bedroom.jpg", class: "yacht-img-show"%>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="heading-content">
-        <h3>Take some rest</h3>
-      </div>
-      <div class="pictures-container">
-        <%= image_tag "living.jpg", class: "yacht-img-show"%>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="heading-content">
-        <h3>Invite your friends</h3>
-      </div>
-      <div class="pictures-container">
-        <%= image_tag "interior.jpg", class: "yacht-img-show"%>
-      </div>
-    </div>
 
     <div class="column">
       <div class="infos-content">
@@ -72,7 +37,7 @@
         <div class="infos-text">
           <h5>Details:</h5>
           <p>
-            <%= image_tag "description.png", class: "yacht-icon yacht-description"%> <p> <%= @yacht.description%></p>
+            <%= image_tag "description.png", class: "yacht-icon yacht-description"%> <%= @yacht.description%>
           </p>
           <p>
             <%= image_tag "price.png", class: "yacht-icon"%> <%= @yacht.price%> € / day.
@@ -95,7 +60,30 @@
         <div class="infos-text">
           <%= render 'shared/booking_form' %>
           <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
+          </div>
         </div>
       </div>
+    </div>
+
+    <div class="column">
+      <div class="infos-content">
+        <h3>Booking resume</h3>
+      </div>
+      <div class="infos-container details">
+          <div class="infos-text">
+            <p>
+              <%= image_tag "double_bed.png", class: "yacht-icon"%> <span id="total-nights">0</span> nights.
+            </p>
+            <p>
+              <%= image_tag "price.png", class: "yacht-icon"%> <span id="total-price">0</span> €.
+            </p>
+            <p>
+              <%= image_tag "money.png", class: "yacht-icon"%> <span id="flat-price-per-night"><%= @yacht.price %></span> € / night.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
