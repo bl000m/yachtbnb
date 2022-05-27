@@ -40,9 +40,9 @@
           <div class="card-front">
             <p><%= yacht.name %></p>
              <% if yacht.photo.key %>
-              <%= cl_image_tag yacht.photo.key %>
+              <%= cl_image_tag yacht.photo.key, class: "yacht-img" %>
             <% else %>
-              <img src="https://res.cloudinary.com/stefc/image/upload/v1653570985/development/df33lzfti1h3m95nxvgvkkbjuba6.jpg" alt="yacht">
+              <img src="https://res.cloudinary.com/stefc/image/upload/v1653570985/development/df33lzfti1h3m95nxvgvkkbjuba6.jpg" alt="yacht", class="yacht-img">
             <% end %>
              <div class="card-category">
              </div>
