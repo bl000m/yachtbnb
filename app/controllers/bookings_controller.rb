@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @yacht = @booking.yacht
   end
 
   def edit
