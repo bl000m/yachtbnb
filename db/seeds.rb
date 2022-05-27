@@ -91,16 +91,6 @@ Yacht.create!(
 )
 
 Yacht.create!(
-  name: "MOON DANCER",
-  address: "Gênes",
-  price: 10000,
-  description: "I first met her on a holiday to an exotic country. The moons delicate light had just turned the world a-flame with silver when I saw her. She had a comely figure which was stem-thin. Her curvilinear waist didn’t surprise me as much as the saffron tint to her complexion.",
-  user: jeff_bezos,
-  stars: 5,
-  voyager: 8
-)
-
-Yacht.create!(
   name: "HAWAII",
   address: "Porto Cervo",
   price: 10000,
