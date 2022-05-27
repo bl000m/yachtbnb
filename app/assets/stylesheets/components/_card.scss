@@ -23,6 +23,7 @@
   min-height: 350px;
   perspective: 2000px;
   perspective-origin: top;
+  background: transparent;
 }
 
 .card-wrapper:hover .card {
@@ -36,6 +37,8 @@
   transition: transform 0.8s cubic-bezier(0.86,0,0.07,1);
   color: black;
   font-weight: bold;
+  background: transparent;
+  border-radius: 10px;
 }
 
 .card-front, .card-back {
@@ -45,6 +48,7 @@
   padding: 30px;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  border-radius: 10px;
 }
 
 .card-front {

@@ -1,12 +1,12 @@
-<nav data-controller="navbar" data-action="scroll->navbar#connect">
+<nav class="anim-nav">
   <div class="nav-logo">
-    <p class="nav-icon" data-controller="navbar" data-action="scroll->navbar#connect">
+    <p class="nav-icon anim-icon">
       <%= link_to "Yachtbnb", root_path, class: "nav-link" %>
     </p>
   </div>
 
     <% if user_signed_in? %>
-      <div class="nav-item dropdown" data-controller="navbar" data-action="scroll->navbar#connect">
+      <div class="nav-item dropdown anim-item">
         <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <a href="#">Profile</a>
@@ -20,5 +20,4 @@
           <%= link_to "Sign in / Sign up", new_user_session_path, class: "sign-btn" %>
       </div>
     <% end %>
-
 </nav>
